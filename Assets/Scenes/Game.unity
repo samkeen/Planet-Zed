@@ -585,7 +585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   xRange: 5
-  yRange: 2.6
+  yRange: 3.5
+  positionPitchFactor: -5
+  controlPitchFactor: -10
 --- !u!1 &1981576524
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,17 +633,17 @@ PrefabInstance:
     - target: {fileID: 4466858588295128315, guid: a404b6c6175254beab9fbb8751447658,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4466858588295128315, guid: a404b6c6175254beab9fbb8751447658,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4466858588295128315, guid: a404b6c6175254beab9fbb8751447658,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.97
+      value: 7.71
       objectReference: {fileID: 0}
     - target: {fileID: 4466858588295128315, guid: a404b6c6175254beab9fbb8751447658,
         type: 3}
@@ -686,17 +688,17 @@ PrefabInstance:
     - target: {fileID: 4466858588295128315, guid: a404b6c6175254beab9fbb8751447658,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75586
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4466858588295128315, guid: a404b6c6175254beab9fbb8751447658,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75586
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4466858588295128315, guid: a404b6c6175254beab9fbb8751447658,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.75586
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a404b6c6175254beab9fbb8751447658, type: 3}
