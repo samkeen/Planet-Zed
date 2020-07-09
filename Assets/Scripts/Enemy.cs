@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private GameObject deathFX;
+    [SerializeField] private Transform parent;
     private void Start()
     {
         AddNonTriggerBoxCollimder();
@@ -20,7 +21,8 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         print("Collided with enemy: " + gameObject.name);
-        Instantiate(deathFX, transform.position, Quaternion.identity);
+        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        fx.transform.parent = parent;
         Destroy(gameObject);
     }
 }
