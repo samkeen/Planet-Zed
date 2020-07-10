@@ -7,20 +7,42 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private GameObject deathFX;
     [SerializeField] private Transform parent;
+    [SerializeField] private int scorePerHit = 30;
+    [SerializeField] private int hitPoints = 3;
+    private ScoreBoard scoreBoard;
+    
     private void Start()
     {
-        AddNonTriggerBoxCollimder();
+        AddBoxCollider();
+        scoreBoard = FindObjectOfType<ScoreBoard>();
     }
 
-    private void AddNonTriggerBoxCollimder()
+    private void AddBoxCollider()
     {
-        Collider collider = gameObject.AddComponent<BoxCollider>();
-        collider.isTrigger = false;
+        Collider boxCollider = gameObject.AddComponent<BoxCollider>();
+        boxCollider.isTrigger = false;
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        print("Collided with enemy: " + gameObject.name);
+        ProcessHit();
+        if (hitPoints <= 0)
+        {
+            print("dying");
+            KillEnemy();
+        }
+    }
+
+    private void ProcessHit()
+    {
+        hitPoints--;
+        print("Hits at: " + hitPoints);
+        scoreBoard.ScoreHit(scorePerHit);
+    }
+
+    private void KillEnemy()
+    {
+        // render the explosion
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
         Destroy(gameObject);
