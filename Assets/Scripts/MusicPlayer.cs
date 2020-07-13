@@ -9,7 +9,8 @@ public class MusicPlayer : MonoBehaviour
     void Awake()
     {
         int musicPlayerCount = FindObjectsOfType<MusicPlayer>().Length;
-        if (musicPlayerCount >=1)
+        print("found music player count: " + musicPlayerCount);
+        if (musicPlayerCount >1)
         {
             // destroy the component I'm attached to
             Destroy(gameObject);
